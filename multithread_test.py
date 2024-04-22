@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     worker_threads = list()
 
-
+    # make a list of worker threads by iterating over the thread call
     for index in range(3):
         logging.info(f"Main      : create and start thread {index}")
 
@@ -26,6 +26,7 @@ if __name__ == "__main__":
 
         x.start()
 
+    # set the join flag on each by iterating over the worker threads and setting the .join() flag
     for index, thread in enumerate(worker_threads):
         logging.info(f"Main      : before joining thread {index}")
         thread.join()
